@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""
-    Script that provides some stats about
-    Nginx logs stored in MongoDB
-"""
+""" This module defines the function 'school_by_topic()' """
 from pymongo import MongoClient
 
 
 def log_stats():
-    """Returns the list of school"""
+    """Script that provides some stats about Nginx logs stored in MongoDB."""
     client = MongoClient("mongodb://localhost:27017/")
     logs = client.logs.nginx.count_documents({})
     print(f"{logs} logs")
